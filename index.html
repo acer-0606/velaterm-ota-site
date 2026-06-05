@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VelaTerm OTA</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #16191d;
+        --muted: #5d6670;
+        --line: #d8dee5;
+        --paper: #f7f8fa;
+        --accent: #136f63;
+        --accent-soft: #e3f1ee;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: ui-monospace, "SFMono-Regular", "Cascadia Mono", Menlo, Consolas, monospace;
+        font-size: 15px;
+        line-height: 1.55;
+      }
+
+      main {
+        width: min(1040px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 56px 0 72px;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 24px;
+      }
+
+      h1,
+      h2 {
+        margin: 0;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        font-size: clamp(32px, 6vw, 60px);
+        line-height: 0.96;
+      }
+
+      h2 {
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: var(--muted);
+        max-width: 760px;
+        margin: 16px 0 0;
+      }
+
+      section {
+        padding: 28px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .list {
+        display: grid;
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .item {
+        display: grid;
+        grid-template-columns: minmax(160px, 240px) 1fr;
+        gap: 16px;
+        align-items: baseline;
+        padding: 12px 0;
+      }
+
+      .label {
+        color: var(--muted);
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+
+      code {
+        overflow-wrap: anywhere;
+        background: var(--accent-soft);
+        border: 1px solid #c5e1da;
+        padding: 2px 6px;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          width: min(100% - 24px, 1040px);
+          padding-top: 36px;
+        }
+
+        .item {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>VelaTerm OTA</h1>
+        <p>GitHub Pages serves signed snapshot metadata. Versioned app packages are distributed as GitHub Release assets.</p>
+      </header>
+
+      <section>
+        <h2>Public Endpoints</h2>
+        <div class="list">
+          <div class="item">
+            <span class="label">Timestamp</span>
+            <a href="./timestamp.json"><code>timestamp.json</code></a>
+          </div>
+          <div class="item">
+            <span class="label">Snapshot</span>
+            <code>snapshots/&lt;snapshotId&gt;/snapshot.json</code>
+          </div>
+          <div class="item">
+            <span class="label">Documentation</span>
+            <a href="./README.md"><code>README.md</code></a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Targets</h2>
+        <div class="list">
+          <div class="item">
+            <span class="label">Application</span>
+            <code>app:&lt;platform&gt;:&lt;version&gt;</code>
+          </div>
+          <div class="item">
+            <span class="label">Artifact</span>
+            <code>*.velaterm-ota</code>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Platforms</h2>
+        <div class="list">
+          <div class="item">
+            <span class="label">macOS Apple Silicon</span>
+            <code>darwin-aarch64</code>
+          </div>
+          <div class="item">
+            <span class="label">Linux</span>
+            <code>linux-x86_64</code>
+          </div>
+          <div class="item">
+            <span class="label">Windows</span>
+            <code>windows-x86_64</code>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Release Assets</h2>
+        <p>
+          This Pages site does not serve legacy <code>latest.json</code> or <code>manifest.json</code> endpoints. Binary packages live in
+          <a href="https://github.com/acer-0606/velaterm/releases">VelaTerm GitHub Releases</a>.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

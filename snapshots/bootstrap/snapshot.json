@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "kind": "velatermOtaSnapshot",
+  "snapshotId": "bootstrap",
+  "channel": "stable",
+  "version": 1,
+  "publishedAt": "2026-06-05T00:00:00.000Z",
+  "minimumHostVersion": "0.1.0",
+  "metadata": [],
+  "targets": [],
+  "signature": "bootstrap-unsigned-placeholder"
+}
