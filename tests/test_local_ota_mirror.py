@@ -168,7 +168,7 @@ class LocalOtaMirrorTests(unittest.TestCase):
             asset = cache / "snapshots" / fixture["snapshot_id"] / "assets" / fixture["asset_name"]
 
             self.assertEqual(result.asset_count, 1)
-            self.assertEqual(current["snapshotId"], fixture["snapshot_id"])
+            self.assertEqual(current["snapshot"], fixture["snapshot_id"])
             self.assertEqual(asset.read_bytes(), fixture["asset_bytes"])
 
     def test_sync_rejects_non_velaterm_ota_assets(self):
