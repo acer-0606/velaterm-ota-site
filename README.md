@@ -1,15 +1,16 @@
 # VelaTerm OTA Site
 
-This repository is the public static OTA metadata site for VelaTerm.
+This repository is the public static OTA metadata and mirror site for VelaTerm.
 
-GitHub Pages publishes lightweight metadata from the `main` branch repository root:
+GitHub Pages publishes metadata and immutable OTA package mirrors from the `main` branch repository root:
 
 - `timestamp.json`
 - `snapshots/<snapshotId>/snapshot.json`
+- `snapshots/<snapshotId>/assets/<name>.velaterm-ota`
 - `index.html`
 - `README.md`
 
-Versioned `.velaterm-ota` packages are published as GitHub Release assets. Do not commit updater payloads, private OTA packages, signing keys, decryption keys, CI secrets, or release records that contain local machine paths.
+Versioned `.velaterm-ota` packages are uploaded to GitHub Releases and mirrored under `snapshots/<snapshotId>/assets/` for public OTA clients. Do not commit private updater payloads, decrypted packages, signing keys, decryption keys, CI secrets, or release records that contain local machine paths.
 
 GitHub Pages endpoint:
 
@@ -50,7 +51,7 @@ node scripts/publish-ota-snapshot.mjs \
   --publish
 ```
 
-Commit and push the updated `timestamp.json` and immutable `snapshots/<snapshotId>/snapshot.json` after uploading the referenced `.velaterm-ota` files to GitHub Releases.
+Commit and push the updated `timestamp.json`, immutable `snapshots/<snapshotId>/snapshot.json`, and `snapshots/<snapshotId>/assets/<name>.velaterm-ota` files after uploading the same `.velaterm-ota` files to GitHub Releases.
 
 ## Local LAN Mirror
 

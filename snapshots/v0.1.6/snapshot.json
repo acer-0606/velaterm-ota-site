@@ -3,8 +3,8 @@
   "kind": "velatermOtaSnapshot",
   "snapshotId": "v0.1.6",
   "channel": "stable",
-  "version": 7,
-  "publishedAt": "2026-06-09T03:42:26.052Z",
+  "version": 8,
+  "publishedAt": "2026-06-09T04:08:52.028Z",
   "minimumHostVersion": "0.1.0",
   "metadata": [],
   "targets": [
