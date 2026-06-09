@@ -3,8 +3,8 @@
   "kind": "velatermOtaSnapshot",
   "snapshotId": "v0.1.5",
   "channel": "stable",
-  "version": 5,
-  "publishedAt": "2026-06-09T03:01:50.276Z",
+  "version": 6,
+  "publishedAt": "2026-06-09T03:34:42.782Z",
   "minimumHostVersion": "0.1.0",
   "metadata": [],
   "targets": [
@@ -13,11 +13,11 @@
       "kind": "app",
       "platform": "windows-x86_64",
       "version": "0.1.5",
-      "assetName": "sha256-78a06e91f61f-VelaTerm-windows.velaterm-ota",
-      "sha256": "78a06e91f61fa701c6d88afb90e6651112bd82ec2fcf8aaded6e1c54029bd1bc",
-      "payloadSha256": "5a311a1a0d25f44eab17b763e4224fe237c1158decbeb7c669e4f49f99ceb076",
-      "length": 9515124,
-      "tauriSignature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTelFpK2diWXIxTXlWalorcE5DMW1IYXlVaWRIa0lacE9jWlo5N2pHbVpxSFFUK1ZuY3UzaWVpRnBRL3B0QjFiTi9xdkVwNWR3UmRMakRsQjBMdTNqMmZYNGhCMHRERFFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwOTc0MDA4CWZpbGU6VmVsYVRlcm1fMC4xLjVfeDY0LXNldHVwLmV4ZQpGVnQ1TDN4VXlFdFA3L0VJL3NMM1FrZ0ZTR3JOWXpYc09EeGtSVzdRcVBZalV2L3RRaERLcGxGMlk5ZFhZT1ZGdytlemt2bHphZVBsaVR3MXl2cFdCZz09Cg==",
+      "assetName": "sha256-a77c7a4c8426-VelaTerm-windows.velaterm-ota",
+      "sha256": "a77c7a4c84261427d660ccb8f0bccb431f47894e7da47d0d5b71f023b73b0ae1",
+      "payloadSha256": "ea57e9e3cdb49a6af379aa5d3198723e03d49267e7819f38d179915ec9413ae7",
+      "length": 9515909,
+      "tauriSignature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTelFpK2diWXIxTTYvS2RQK284QTgxbmo5REhkZjVqQ1hPcUFMR0c1cm53WHVCUVlXSm5jQUUwU3o3UjlsMkZ0TkQxNmVrQkpESVRaTzdFNlcrRXlub2VtaERCLzF6SWdrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwOTc1OTYxCWZpbGU6VmVsYVRlcm1fMC4xLjVfeDY0LXNldHVwLmV4ZQpLUEFtUEFrME43MFZRWFIxTkRxakpPeCtWUVlCY2FlTlVXeG1xL3M1QlhKK1NTdXlGUFFrMkQ1Q2ZKL1B2ejRVTmdSWTYzQVRHNkFEbTZLckhEQW1Bdz09Cg==",
       "encryption": {
         "format": "dnota1",
         "payloadPath": "payloads/VelaTerm_0.1.5_x64-setup.exe",
@@ -26,11 +26,11 @@
       "locations": [
         {
           "kind": "githubRelease",
-          "url": "https://github.com/acer-0606/velaterm/releases/download/v0.1.5/sha256-78a06e91f61f-VelaTerm-windows.velaterm-ota"
+          "url": "https://github.com/acer-0606/velaterm/releases/download/v0.1.5/sha256-a77c7a4c8426-VelaTerm-windows.velaterm-ota"
         },
         {
           "kind": "snapshotMirror",
-          "path": "assets/sha256-78a06e91f61f-VelaTerm-windows.velaterm-ota"
+          "path": "assets/sha256-a77c7a4c8426-VelaTerm-windows.velaterm-ota"
         }
       ]
     }
