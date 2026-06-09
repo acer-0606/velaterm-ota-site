@@ -1,16 +1,15 @@
 # VelaTerm OTA Site
 
-This repository is the public static OTA metadata and mirror site for VelaTerm.
+This repository is the public static OTA metadata site for VelaTerm.
 
-GitHub Pages publishes metadata and immutable OTA package mirrors from the `main` branch repository root:
+GitHub Pages publishes lightweight metadata from the `main` branch repository root:
 
 - `timestamp.json`
 - `snapshots/<snapshotId>/snapshot.json`
-- `snapshots/<snapshotId>/assets/<name>.velaterm-ota`
 - `index.html`
 - `README.md`
 
-Versioned `.velaterm-ota` packages are uploaded to GitHub Releases and mirrored under `snapshots/<snapshotId>/assets/` for public OTA clients. Do not commit private updater payloads, decrypted packages, signing keys, decryption keys, CI secrets, or release records that contain local machine paths.
+Versioned `.velaterm-ota` packages are uploaded to GitHub Release tag assets. Do not commit `.velaterm-ota` binaries, private updater payloads, decrypted packages, signing keys, decryption keys, CI secrets, or release records that contain local machine paths.
 
 GitHub Pages endpoint:
 
@@ -51,7 +50,7 @@ node scripts/publish-ota-snapshot.mjs \
   --publish
 ```
 
-Commit and push the updated `timestamp.json`, immutable `snapshots/<snapshotId>/snapshot.json`, and `snapshots/<snapshotId>/assets/<name>.velaterm-ota` files after uploading the same `.velaterm-ota` files to GitHub Releases.
+Upload the planned `.velaterm-ota` assets to the GitHub Release tag, then commit and push only the updated `timestamp.json` and immutable `snapshots/<snapshotId>/snapshot.json` files.
 
 ## Local LAN Mirror
 
@@ -67,13 +66,15 @@ From the parent VelaTerm repository:
 python3 subrepos/ota-site/tools/local_ota_mirror.py run --port 18080 --interval 300
 ```
 
-The mirror serves:
+The mirror downloads GitHub Release assets, verifies each target `sha256` and `length`, and serves:
 
 - `http://<lan-ip>:18080/timestamp.json`
 - `http://<lan-ip>:18080/snapshots/<snapshot-id>/snapshot.json`
 - `http://<lan-ip>:18080/snapshots/<snapshot-id>/assets/<name>.velaterm-ota`
 
 All cached files live under `.local-ota/`, which is ignored by git.
+
+When serving `/timestamp.json`, the mirror adds `site.kind = "mirror"` outside the signed payload. VelaTerm accepts that local mirror marker and prefers `snapshotMirror` URLs while keeping GitHub Release URLs as fallback.
 
 ## Mirror Configuration
 

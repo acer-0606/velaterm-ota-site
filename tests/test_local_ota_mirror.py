@@ -189,6 +189,44 @@ class LocalOtaMirrorTests(unittest.TestCase):
                     metadata_verifier=lambda name, text, signature: None,
                 )
 
+    def test_server_marks_root_timestamp_as_mirror_without_resigning(self):
+        mirror = load_module()
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = pathlib.Path(temp_dir)
+            remote = root / "remote"
+            remote.mkdir()
+            fixture = write_snapshot_remote(remote)
+            cache = root / "cache"
+            mirror.sync_mirror(
+                remote_base_url=remote.resolve().as_uri(),
+                cache_dir=cache,
+                public_base_url="http://127.0.0.1:0",
+                timeout=2,
+                metadata_verifier=lambda name, text, signature: None,
+            )
+            cached_timestamp = json.loads(
+                (
+                    cache / "snapshots" / fixture["snapshot_id"] / "timestamp.json"
+                ).read_text(encoding="utf-8")
+            )
+
+            server = mirror.build_server(bind="127.0.0.1", port=0, cache_dir=cache)
+            thread = threading.Thread(target=server.serve_forever, daemon=True)
+            thread.start()
+            try:
+                host, port = server.server_address
+                with urllib.request.urlopen(f"http://{host}:{port}/timestamp.json", timeout=2) as response:
+                    served_timestamp = json.loads(response.read().decode("utf-8"))
+
+                expected = dict(cached_timestamp)
+                expected["site"] = {"kind": "mirror"}
+                self.assertEqual(served_timestamp, expected)
+                self.assertEqual(served_timestamp["signature"], cached_timestamp["signature"])
+            finally:
+                server.shutdown()
+                server.server_close()
+
     def test_server_returns_404_for_legacy_endpoints(self):
         mirror = load_module()
 
