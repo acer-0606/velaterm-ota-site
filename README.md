@@ -46,11 +46,11 @@ node scripts/publish-ota-snapshot.mjs \
   --release-record artifacts/release-record-<version>/<platform>.json \
   --site-dir subrepos/ota-site \
   --tag v<version> \
-  --repo acer-0606/velaterm \
+  --repo acer-0606/velaterm-ota-site \
   --publish
 ```
 
-Upload the planned `.velaterm-ota` assets to the GitHub Release tag, then commit and push only the updated `timestamp.json` and immutable `snapshots/<snapshotId>/snapshot.json` files.
+Upload the planned `.velaterm-ota` assets to the `acer-0606/velaterm-ota-site` GitHub Release tag, then commit and push only the updated `timestamp.json` and immutable `snapshots/<snapshotId>/snapshot.json` files.
 
 ## Local LAN Mirror
 

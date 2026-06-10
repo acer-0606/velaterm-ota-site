@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "kind": "velatermOtaTimestamp",
   "channel": "stable",
-  "version": 10,
+  "version": 11,
   "snapshotId": "v0.1.8",
   "snapshotPath": "snapshots/v0.1.8/snapshot.json",
-  "snapshotSha256": "2e709b27319675659f71ad86ed0037a0c229c10a40db0e9b712b8d2d5751f8b5",
-  "snapshotLength": 1628,
-  "publishedAt": "2026-06-10T06:39:24.627Z",
-  "expiresAt": "2026-07-10T06:39:24.627Z",
+  "snapshotSha256": "7aaecf98854ded0397936e8894a9673151ba9e41ed4fdfab2f532fe46a3ba9a5",
+  "snapshotLength": 1637,
+  "publishedAt": "2026-06-10T07:25:01.882Z",
+  "expiresAt": "2026-07-10T07:25:01.882Z",
   "signature": "",
   "site": {
     "kind": "github"
