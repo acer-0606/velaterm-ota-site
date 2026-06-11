@@ -93,6 +93,40 @@ def write_snapshot_remote(remote, snapshot_id="20260605T000000Z-vtest", asset_su
 
 
 class LocalOtaMirrorTests(unittest.TestCase):
+    def test_metadata_verifier_allows_timestamp_site_context_without_resigning(self):
+        mirror = load_module()
+        timestamp = {
+            "schemaVersion": 1,
+            "kind": TIMESTAMP_KIND,
+            "channel": "stable",
+            "version": 2,
+            "snapshotId": "vtest",
+            "snapshotPath": "snapshots/vtest/snapshot.json",
+            "snapshotSha256": "a" * 64,
+            "snapshotLength": 128,
+            "publishedAt": "2026-06-05T00:00:00.000Z",
+            "expiresAt": "2026-07-05T00:00:00.000Z",
+            "signature": (
+                "cb9396ecf7d26dc1a1ad7485491c983472ad3a752d6f66409afed9ecd9ccba67"
+                "46af2307e302b3f88ee70e4e7e00c60b171900d7d74e3afaff02a669505c6f00"
+            ),
+            "site": {"kind": "github"},
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            public_key = pathlib.Path(temp_dir) / "metadata-public-key.hex"
+            public_key.write_text(
+                "ea4a6c63e29c520abef5507b132ec5f9954776aebebe7b92421eea691446d22c",
+                encoding="utf-8",
+            )
+            verifier = mirror.build_metadata_verifier(public_key)
+            text = json.dumps(timestamp, separators=(",", ":"))
+
+            verifier("timestamp.json", text, timestamp["signature"])
+
+            with self.assertRaisesRegex(RuntimeError, "failed to verify metadata"):
+                verifier("snapshots/vtest/snapshot.json", text, timestamp["signature"])
+
     def test_config_file_supplies_defaults_and_cli_overrides(self):
         mirror = load_module()
 

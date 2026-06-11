@@ -986,8 +986,12 @@ def build_metadata_verifier(metadata_public_key_file):
             signature_bytes = decode_hex_or_base64_text(signature_text, "metadata signature")
             if len(signature_bytes) != 64:
                 raise RuntimeError("metadata signature must be 64 bytes")
+            unsigned_value = strip_signature_fields(
+                value,
+                strip_root_site=name == "timestamp.json",
+            )
             verify_ed25519(
-                canonical_json_bytes(strip_signature_fields(value)),
+                canonical_json_bytes(unsigned_value),
                 signature_bytes,
                 public_key,
             )
@@ -1012,14 +1016,17 @@ def decode_hex_or_base64_text(value, label):
         raise RuntimeError("%s must be hex or base64" % label) from error
 
 
-def strip_signature_fields(value):
+def strip_signature_fields(value, strip_root_site=False, depth=0):
     if isinstance(value, list):
-        return [strip_signature_fields(item) for item in value]
+        return [
+            strip_signature_fields(item, strip_root_site=strip_root_site, depth=depth + 1)
+            for item in value
+        ]
     if isinstance(value, dict):
         return {
-            key: strip_signature_fields(child)
+            key: strip_signature_fields(child, strip_root_site=strip_root_site, depth=depth + 1)
             for key, child in value.items()
-            if key != "signature"
+            if key != "signature" and not (strip_root_site and depth == 0 and key == "site")
         }
     return value
 
