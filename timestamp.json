@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "kind": "velatermOtaTimestamp",
   "channel": "stable",
-  "version": 13,
-  "snapshotId": "v0.1.11",
-  "snapshotPath": "snapshots/v0.1.11/snapshot.json",
-  "snapshotSha256": "06827cb5fd27c31f49e66a93c0059f16626c484408d451c84eca5134af4fd75c",
+  "version": 14,
+  "snapshotId": "v0.1.12",
+  "snapshotPath": "snapshots/v0.1.12/snapshot.json",
+  "snapshotSha256": "1b5dcf29d25ae619194d02eaff3d227cdf023e169f7f13fe3b599df740abfaf1",
   "snapshotLength": 1770,
-  "publishedAt": "2026-06-11T05:08:01.437Z",
-  "expiresAt": "2026-07-11T05:08:01.437Z",
-  "signature": "4d7fa363027766373b1aba5d8c131162a434d5948af5f858ec2391478245941dc75b40b4332c3d27c7a6b710f77180c085e7f1dc6a9cd732bfdf1fd5b5ff5004",
+  "publishedAt": "2026-06-11T07:35:21.613Z",
+  "expiresAt": "2026-07-11T07:35:21.613Z",
+  "signature": "d716227f0b77493f42f1431093bcd4a358e0a26c9ea07d4d2ddfdc5862ddf040258659988ae436d42fac39152cf36df595592d8de283e6b23b813988160b4c00",
   "site": {
     "kind": "github"
   }
