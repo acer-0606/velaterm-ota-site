@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "kind": "velatermOtaSnapshot",
+  "snapshotId": "v0.1.13-20260618T07353",
+  "channel": "stable",
+  "version": 18,
+  "publishedAt": "2026-06-18T07:35:39.146Z",
+  "minimumHostVersion": "0.1.0",
+  "metadata": [],
+  "targets": [
+    {
+      "targetId": "app:darwin-aarch64:0.1.13",
+      "kind": "app",
+      "platform": "darwin-aarch64",
+      "version": "0.1.13",
+      "assetName": "sha256-ca230098b138-VelaTerm-mac.velaterm-ota",
+      "sha256": "ca230098b138a390b06ea87c78e521fd875e0c3886eb6a272177402290cbc2ca",
+      "payloadSha256": "831223566cfef62ee4c320ed662b32901c5592c4d68a9ea841062d57738794fd",
+      "length": 9295864,
+      "tauriSignature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTelFpK2diWXIxTXpZa084bzhCRW14WXZQQkF2UXZXTTdCb3E1Lzd4aEM4NXVVbmR6TlJRaXdUT01RZDRJMDdMMVFmTzRIa2JpendVYk9KUERYTFY0WGNJSWhzaHdvK0FNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgxNzUxOTYyCWZpbGU6VmVsYVRlcm0uYXBwLnRhci5negpBTXN4bHJ6UnRPTXFna0tQZkIvTHFxWURuUiszUDl4M2pqNDZJbjlNazYxdGVBOGRIZnBPQXJ2aG9lR3Fxb1l4eE9TREtMYjJwaC9mWkJFWDFaQU1DUT09Cg==",
+      "encryption": {
+        "format": "dnota1",
+        "payloadPath": "payloads/VelaTerm.app.tar.gz",
+        "keyId": "main-app-ota-v1"
+      },
+      "locations": [
+        {
+          "kind": "githubRelease",
+          "url": "https://github.com/acer-0606/velaterm-ota-site/releases/download/v0.1.13/sha256-ca230098b138-VelaTerm-mac.velaterm-ota"
+        },
+        {
+          "kind": "snapshotMirror",
+          "path": "assets/sha256-ca230098b138-VelaTerm-mac.velaterm-ota"
+        }
+      ]
+    },
+    {
+      "targetId": "app:windows-x86_64:0.1.13",
+      "kind": "app",
+      "platform": "windows-x86_64",
+      "version": "0.1.13",
+      "assetName": "sha256-ef29aa4eb92b-VelaTerm-windows.velaterm-ota",
+      "sha256": "ef29aa4eb92bf1f82d722f28e904b2618afc62a750e7b8bd879db77932798804",
+      "payloadSha256": "dd7555a01d278c08bf522d331bcd061c7428cf8cda0c308ec2a91df1b4318421",
+      "length": 9544010,
+      "tauriSignature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTelFpK2diWXIxTTZ1UUtwaE5vSzB3M2o3UlZlZ2hmSDN1eWtVR0RQcS9NaDJ1Q1N6RGIwZnNNU3ZrTmNhRUpySzRCYlhpdHY0alRRWG50ajgrSHN2anBLcmJBMWxBOWdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgxNzY4MDEwCWZpbGU6VmVsYVRlcm1fMC4xLjEzX3g2NC1zZXR1cC5leGUKZTVoMGJUeUwyNStDenJqeWZDZGMrWWVQVmUraGRKbDZlRjhrV0dVRFBla2ZOTng2Y1VydlJPRlg0SEttVVdZNUErOTRSWGtoQ2dHcjZLS2xiL0RzRGc9PQo=",
+      "encryption": {
+        "format": "dnota1",
+        "payloadPath": "payloads/VelaTerm_0.1.13_x64-setup.exe",
+        "keyId": "main-app-ota-v1"
+      },
+      "locations": [
+        {
+          "kind": "githubRelease",
+          "url": "https://github.com/acer-0606/velaterm-ota-site/releases/download/v0.1.13/sha256-ef29aa4eb92b-VelaTerm-windows.velaterm-ota"
+        },
+        {
+          "kind": "snapshotMirror",
+          "path": "assets/sha256-ef29aa4eb92b-VelaTerm-windows.velaterm-ota"
+        }
+      ]
+    }
+  ],
+  "signature": "45898a117b9b49e61b3963410bf3fb308086fb96d2b9bdb4a481843685eb21a887cb786e60d0b66a86184472fd65c997d93bf27c2af18ef1156052ed4f526d0f"
+}
