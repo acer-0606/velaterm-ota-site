@@ -2,14 +2,14 @@
   "schemaVersion": 1,
   "kind": "velatermOtaTimestamp",
   "channel": "stable",
-  "version": 21,
-  "snapshotId": "v0.1.16-20260622T01233",
-  "snapshotPath": "snapshots/v0.1.16-20260622T01233/snapshot.json",
-  "snapshotSha256": "ff70658cd52407b5f1cbf5cb270798a26837a9a3daa84caa430503e9d95a1627",
+  "version": 22,
+  "snapshotId": "v0.1.17-20261002T02010",
+  "snapshotPath": "snapshots/v0.1.17-20261002T02010/snapshot.json",
+  "snapshotSha256": "ad8dc6d174ec8ddab5ebc73d2ce813fa390637fe8d81a26530897ea3dcec9aae",
   "snapshotLength": 3134,
-  "publishedAt": "2026-06-22T01:23:34.534Z",
-  "expiresAt": "2026-07-22T01:23:34.534Z",
-  "signature": "664298adf764988a6d837c7e935c2febb9c2076204fa0add0c9fdbd17f10aa46ae1badab25035a009749d199c097861af0a9f83f2b27445b2e35ebbb1cdefd05",
+  "publishedAt": "2026-10-02T02:01:03.847Z",
+  "expiresAt": "2026-11-01T02:01:03.847Z",
+  "signature": "124c595c7bc1ca53f70ecff51b8798193593a6bda4581ca5003c41408da93e23d0a95eeddcf3b55983060244ff9920bf0d87029cf2bfa82fd821e5150ede5b0d",
   "site": {
     "kind": "github"
   }
